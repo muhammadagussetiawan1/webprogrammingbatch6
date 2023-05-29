@@ -1,0 +1,15 @@
+Bagaimana cara menjalankan kipas angin :
+
+flow :
+1. siapkan kipas angin, pastikan listrik menyala
+2. colokkan kabel kipas ke terminal
+3. pencet tombol on kipas
+4. kipas angin berhasil dihidupkan
+
+pseudocode :
+if (kipas_angin == "terhubung ke listrik")
+    echo "sudah menyala"
+else if (kipas_angin=="stadby")
+	echo "keadaan standby"
+else (kipas angin=="tidak terhubung listrik")
+echo "kipas mati"
