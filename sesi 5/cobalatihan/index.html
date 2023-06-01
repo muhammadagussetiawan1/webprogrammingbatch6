@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Aritmatika</title>
+  </head>
+  <body>
+    <h1>Belajar Event Pada Java Script</h1>
+    <button
+      onclick="getNama()"
+      style="background-color: aqua; padding: 10px; color: blueviolet"
+    >
+      Klik Saya untuk menampilkan Nama
+    </button>
+
+    <div id="hasil"></div>
+    <hr />
+    <h1>Penggunaan Operator Artimatika di JS</h1>
+    <div id="penjumlahan"></div>
+    <div id="pengurangan"></div>
+    <div id="perkalian"></div>
+    <div id="pembagian"></div>
+    <div id="modulus"></div>
+
+    <hr />
+
+    <h3>Kesimpulan JavaScript Introductions (Membuat 4 Output)</h3>
+    <ul>
+      <li>Menggunakan Fungsi console.log(); (*hanya disaat inspect)</li>
+      <li>Menggunakan Fungsi alert(); (*popup dialog)</li>
+      <li>
+        Menggunakan Fungsi document.write(); (*cetak ke halaman / tidak by
+        ID/Class/Name)
+      </li>
+      <li>
+        Menggunakan Fungsi innerHTML(); (*cetak ke halaman / membutuhkan by
+        ID/Class/Name)
+      </li>
+    </ul>
+
+    <script>
+      // penggunaan event
+      function getNama() {
+        document.getElementById("hasil").innerHTML =
+          "<h3>Nama Saya Adalah Arif</h3>";
+      }
+
+      // operator aritmatika
+      var bilangan1 = 6;
+      var bilangan2 = 2;
+
+      var penjumalahan = bilangan1 + bilangan2;
+      var pengurangan = bilangan1 - bilangan2;
+      var perkalian = bilangan1 * bilangan2;
+      var pembagian = bilangan1 / bilangan2;
+      var modulus = bilangan1 % bilangan2;
+
+      document.getElementById("penjumlahan").innerHTML = getData(
+        "Penjumlahan",
+        penjumalahan
+      );
+      document.getElementById("pengurangan").innerHTML = getData(
+        "Pengurangan",
+        pengurangan
+      );
+      document.getElementById("perkalian").innerHTML = getData(
+        "Perkalian",
+        perkalian
+      );
+      document.getElementById("pembagian").innerHTML = getData(
+        "Pembagian",
+        pembagian
+      );
+      document.getElementById("modulus").innerHTML = getData(
+        "Modulus",
+        modulus
+      );
+
+      function getData(tipe, hasil) {
+        return `Hasil ${tipe} : ${hasil}`;
+        // return "Hasil " + tipe + " : " + hasil;
+      }
+    </script>
+  </body>
+</html>
+
+===========
+*solved*
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Java Script</title>
+  </head>
+  <body>
+    <p>Masukan Nilai Anda :</p>
+    <input type="number" id="nilai" placeholder="Masukan Nilai..." required />
+    <button onclick="calculate()">Cek Grade</button>
+    <div id="hasil"></div>
+
+    <hr />
+
+    <h3>Hitung Mundur Maju :</h3>
+    <button id="mundur" onclick="hitung('mundur')">Klik untuk mundur</button>
+    <button id="maju" onclick="hitung('maju')">Klik untuk maju</button>
+
+    <div id="hasil_hitung">0</div>
+    <div id="hasil_status"></div>
+
+    <script>
+      // calculate
+      function calculate() {
+        var nilai = parseInt(document.getElementById("nilai").value, 10);
+        let hasil = hitungGrade(nilai);
+        document.getElementById("hasil").innerHTML = hasil;
+      }
+
+      // Hitung grade
+      function hitungGrade(nilai) {
+        let grade = "";
+        if (nilai >= 90 && nilai <= 100) {
+          grade = "A";
+        } else if (nilai >= 80 && nilai <= 90) {
+          grade = "B";
+        } else if (nilai >= 80 && nilai <= 89) {
+          grade = "C";
+        } else if (nilai >= 60 && nilai <= 79) {
+          grade = "D";
+        } else if (nilai >= 1 && nilai <= 59) {
+          grade = "E";
+        } else {
+          grade = "Tidak Sesuai !";
+        }
+        return `Hasil Grade Anda : ${grade}`;
+      }
+
+      //   Hitung Maju Mundur
+      function hitung(tipe) {
+        var sStatus = "mundur",
+          nilai = 0;
+        var hasil = document.getElementById("hasil_hitung");
+        var status = document.getElementById("hasil_status");
+        if (tipe == "mundur") nilai = parseInt(hasil.innerHTML) - 1;
+        else {
+          nilai = parseInt(hasil.innerHTML) + 1;
+          sStatus = "maju";
+        }
+        hasil.innerHTML = nilai;
+        status.innerHTML = `Status : ${sStatus}`;
+      }
+    </script>
+  </body>
+</html>

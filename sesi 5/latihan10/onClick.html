@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengenal Event Pada JavaScript</title>
+</head>
+<body>
+    <h1>Mengenal Event Pada JavaScript</h1>
+    <h2>www.Hacktiv8.com</h2>
+
+    <!--Memberikan event pada element tombol-->
+    <button onclick="tampilkan_nama()" style="color:black; border-radius: 5px; background-color: aquamarine;">Klik Saya</button>
+
+    <!-- id hasil -->
+    <div id="hasil"></div>
+
+    <script>
+        //membuat function tampilan_nama
+        function tampilkan_nama(){
+            document.getElementById("hasil").innerHTML = "<h3>Nama saya adalah Muhammad Agus Setiawan</h3>";
+        }
+    </script>
+</body>
+</html>

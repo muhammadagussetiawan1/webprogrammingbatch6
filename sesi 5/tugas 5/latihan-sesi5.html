@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan</title>
+</head>
+<body>
+    <label>Tulis Pesan : </label><input id="text" type="text"><br>
+    <label>Berapa Kali : </label><input id="angka" type="number"><br>
+    <button id="btn" onclick="cetak()">Lihat Pesan</button>
+    <ol id="hasil"></ol>
+
+    <script>
+        function cetak(){
+        const dt = document.getElementById("hasil")
+        
+       text = document.getElementById("text").value
+       angka = parseInt(document.getElementById("angka").value);
+
+       for (let i=0; i < angka; i++) {
+        dt.innerHTML = dt.innerHTML + `<li>${text}</li>`
+       }
+    }
+</script>
+</body>
+</html>
